@@ -1,0 +1,63 @@
+# Prism — MIDI Step Sequencer for iPhone and iPad
+
+Prism is a 16-track AUv3 MIDI step sequencer for iPhone and iPad. It sequences external synthesizers, drum machines, and software instruments via MIDI. It does not generate sound itself — it is a performance and composition instrument.
+
+## Key Differentiators
+
+- **Fuse Modes (Peek / Echo / Melt)** — inter-track musical data flow. Tracks read from each other's note streams in real time. Melt takes rhythm from one track and notes from another, generating a third musical idea neither could produce alone. No other sequencer — hardware or software — has this.
+- **Chord Blocks** — reference-based chord objects. Change one chord and every trig referencing it updates across the entire arrangement instantly. 4 swappable banks (32 total chord objects) tied to scenes. No other sequencer has this architecture.
+- **Retroactive MIDI Capture** — Prism is always listening. Play freely — then retroactively capture up to 16 bars of what you just played. Three capture sources: live input, pre-FX, post-FX. No competitor offers source selection.
+- **Multi-Sequencer** — 4 independent sub-sequencers per tonal track, each with its own length and pattern. Set different lengths and they phase against each other — up to 64 simultaneous melodic voices across 16 tracks.
+- **Euclidean Rhythm Generator** — 3 blendable layers per drum pad, each running its own Euclidean sequence. Ghost note blocking. Per-pad polyrhythmic lengths.
+- **Step FX** — up to 4 simultaneous FX processors per individual trig — not per-track, per-trig. Velocity, Pitch, Ratchet, Strum on tonal tracks. Velocity, Length, Ratchet, Flam on drums. Snapshot grid for instant recall.
+- **Parameter Locks (P-Locks)** — per-step automation for any MIDI CC. Every trig carries its own pitch, velocity, length, timing, and FX settings independently. Smoothing, jitter, and conditional logic per lock.
+- **Warp Filter** — a per-track MIDI processing layer between the sequencer and output. Mono/poly filtering (1–8 notes), note density controls, step/octave shifting, randomized shifts and skips, choke and gate functions. Drum tracks get random trig swap and layer. Separate from Fuse — Fuse controls where note data comes from, Warp controls how it's processed before output.
+- **Hardware Trinity** — Prism + Novation Launchpad + Launchkey Mini MK4 + Ableton Live form a complete bidirectional performance system. RGB LED feedback, clip launching, global mixer mode, and MIDI routing that turns an iPhone or iPad into the brain of a hardware setup.
+- **6 LFOs per track** with self-modulation, custom shape drawing, and cascading modulation.
+- **Song Mode** — chain scenes into a linear arrangement with per-step mute maps, linked or unlinked steps, and build-while-you-play workflow.
+- **64 Scenes** — global state snapshots with 8 mute profiles each. Tie Chord Block banks to scenes for one-tap harmonic transformation.
+
+## Sequencer Engine
+
+- 16 tracks (tonal and drum), 512 steps per pattern at 1/32 resolution
+- Per-track independent lengths — polymetric sequencing (e.g., 5-bar melody against 4-bar bass against 3-bar drums)
+- 480 PPQN timing resolution
+- Drum tracks: 16 pads per track, each pad is its own independent sequencer with its own length, resolution, and Step FX
+- Scale locking across all inputs and transformations (50+ scales, custom scale building)
+- Trig conditions: chance, every-N, first-loop-only, conditional chains
+
+## Pricing
+
+- Base: $19.99 (iPhone and iPad)
+- Euclidean Sequencer Extension: $4.99
+- LFO Extension: $4.99
+- Step FX: $4.99
+- Multi-Sequencer: $4.99
+- Launchkey Mini MK4 Control: $4.99
+- Fully unlocked: ~$44.94
+
+## Platform
+
+- Requires iPhone or iPad running iOS 16 or later
+- AUv3 MIDI plug-in — loads inside any compatible host (AUM, Logic Pro for iPad, Cubasis, Loopy Pro, and others)
+- Syncs to host transport automatically
+
+## Documentation
+
+- Getting Started: https://www.alchemyelectronica.com/prism/docs/guides/getting-started
+- Chord Blocks: https://www.alchemyelectronica.com/prism/docs/features/chord-blocks
+- Fuse Modes: https://www.alchemyelectronica.com/prism/docs/features/fuse-modes
+- Retroactive Capture: https://www.alchemyelectronica.com/prism/docs/features/retroactive-capture
+- Euclidean Rhythms: https://www.alchemyelectronica.com/prism/docs/features/euclidean-rhythms
+- Hardware Brain Workflow: https://www.alchemyelectronica.com/prism/docs/workflows/hardware-brain
+- FAQ: https://www.alchemyelectronica.com/prism/docs/guides/faq
+- Compare vs. Hardware: https://www.alchemyelectronica.com/prism/compare
+
+## Developer
+
+Built and maintained by a solo developer. Actively updated.
+Website: https://www.alchemyelectronica.com
+
+## App Store
+
+https://apps.apple.com/us/app/prism-midi-sequencer/id6502302630

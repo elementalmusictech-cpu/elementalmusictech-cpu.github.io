@@ -1,26 +1,81 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Exo 2";
+  src: url("/Exo2-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ══ THEME TOKENS ══
+   Change these to retheme the entire site.
+   Every component references these variables. */
+
+   
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ── Backgrounds ── */
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #111111;
+  --bg-tertiary: #1A1A1A;
+  --bg-card: #141414;
+
+  /* ── Text ── */
+  --text-primary: #E8E8E8;
+  --text-secondary: #9A9489;
+  --text-tertiary: #666666;
+
+  /* ── Accent ── */
+  --accent: #C8A24D;
+  --accent-hover: #D4B465;
+  --accent-dim: rgba(200, 162, 77, 0.12);
+  --accent-ink: #E0C674;
+
+  /* ── CTA (green download / highlight) ── */
+  --cta: #D4A03A;
+  --cta-hover: #E0B84E;
+
+  /* ── Borders ── */
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.14);
+  --border-accent: rgba(200, 162, 77, 0.25);
+
+  /* ── Radius ── */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* ── Fonts ── */
+  --font-body: "Exo 2", system-ui, sans-serif;
+  --font-mono: "Exo 2", system-ui, monospace;
+
+  /* ── Spacing (base unit) ── */
+  --space-unit: 4px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--accent-dim);
+  color: var(--accent);
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.2); }
+
+@keyframes hud-in {
+  from { opacity: 0; transform: translateX(8px) scale(0.97); }
+  to   { opacity: 1; transform: translateX(0) scale(1); }
 }
