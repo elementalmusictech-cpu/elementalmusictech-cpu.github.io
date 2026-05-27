@@ -87,8 +87,7 @@ function FeatureHUD({ activeModal, setActiveModal }: { activeModal: number; setA
             <span className="font-mono text-[10px] font-bold px-1.5 py-0.5 rounded" style={{ color, background: `${color}22` }}>{f.id}</span>
             <span className="font-mono text-[10px] text-[var(--text-tertiary)] tracking-wider">{f.badge}</span>
           </div>
-          <button className="font-mono text-[10px] text-[var(--text-tertiary)] hover:text-[var(--text-primary)] transition-colors" onClick={() => setActiveModal(null)}>✕</button>
-        </div>
+          <button className="font-mono text-[24px] leading-none p-1 text-[var(--text-tertiary)] hover:text-[var(--text-primary)] transition-colors" onClick={() => setActiveModal(null)}>✕</button>        </div>
         <div className="h-px mb-3" style={{ background: `linear-gradient(90deg, ${color}, transparent)` }} />
         <h2 className="text-base font-bold mb-0.5" style={{ color }}>{f.name}</h2>
         <p className="font-mono text-[9px] text-[var(--text-tertiary)] uppercase tracking-widest mb-3">{f.tag}</p>
