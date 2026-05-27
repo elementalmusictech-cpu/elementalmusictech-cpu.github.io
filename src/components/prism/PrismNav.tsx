@@ -32,7 +32,7 @@ export default function PrismNav() {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-[var(--bg-primary)]/90 backdrop-blur-xl border-b border-[var(--border)]" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/prism" className="flex items-center gap-2.5 group">
-        <Image src="images/prismIcon.png" alt="Prism icon" width={40} height={40} className="group-hover:scale-110 transition-transform" />
+        <Image src="/images/prismIcon.png" alt="Prism icon" width={40} height={40} className="group-hover:scale-110 transition-transform" />
           <span className="text-lg font-bold tracking-tight">Prism</span>
         </Link>
 
