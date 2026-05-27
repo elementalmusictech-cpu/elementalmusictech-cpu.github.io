@@ -6,7 +6,7 @@ export default function MeltDiagram() {
       style={{
         background: "#0a0a0a",
         borderRadius: 16,
-        padding: "40px 32px 36px",
+        padding: "12px 8px 8px",
         fontFamily: "'Exo 2', sans-serif",
         color: "#e8e4dc",
         position: "relative",
@@ -27,7 +27,7 @@ export default function MeltDiagram() {
       `}</style>
 
       {/* Subtle radial glow */}
-      <div
+      {/* <div
         style={{
           position: "absolute",
           top: 0,
@@ -38,11 +38,11 @@ export default function MeltDiagram() {
             "radial-gradient(ellipse at 50% 100%, rgba(200,162,77,0.06) 0%, transparent 60%)",
           pointerEvents: "none",
         }}
-      />
+      /> */}
 
       <svg
         width="100%"
-        viewBox="30 20 540 410"
+        viewBox="35 30 545 460"
         style={{ display: "block", position: "relative" }}
       >
         <defs>

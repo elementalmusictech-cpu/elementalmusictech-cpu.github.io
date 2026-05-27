@@ -9,7 +9,7 @@ export default function BlockDiagram() {
       style={{
         background: "#0a0a0a",
         borderRadius: 16,
-        padding: "40px 32px 36px",
+        padding: "12px 8px 8px",
         fontFamily: "'Exo 2', sans-serif",
         color: "#e8e4dc",
         position: "relative",
@@ -39,7 +39,7 @@ export default function BlockDiagram() {
 
       <svg
         width="100%"
-        viewBox="30 10 540 460"
+        viewBox="55 20 490 410"
         style={{ display: "block", position: "relative" }}
       >
 

@@ -415,14 +415,12 @@ export default function PrismHero() {
   }, []);
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-2 md:px-6 pt-12 md:pt-20 relative overflow-hidden" style={{ background: "var(--bg-primary)" }}>
-      {/* Grid background */}
-      <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)", backgroundSize: "40px 40px", maskImage: "radial-gradient(ellipse at center, black 30%, transparent 70%)", WebkitMaskImage: "radial-gradient(ellipse at center, black 30%, transparent 70%)" }} />
+    <section className="min-h-[calc(100svh-64px)] flex flex-col items-center justify-center gap-0 px-2 md:px-6 pt-8 md:pt-12 pb-8 md:pb-12 relative overflow-hidden" style={{ background: "var(--bg-primary)" }}>      <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)", backgroundSize: "40px 40px", maskImage: "radial-gradient(ellipse at center, black 30%, transparent 70%)", WebkitMaskImage: "radial-gradient(ellipse at center, black 30%, transparent 70%)" }} />
 
       {/* Prism SVG */}
-      <div className="relative w-full max-w-[900px] aspect-[900/490] mb-2 md:mb-8">
-        <svg ref={svgRef} viewBox="0 0 900 520" className="w-full h-full">
-          <defs>
+      <div className="relative w-full max-w-[900px] mb-2 md:mb-4">
+            <svg ref={svgRef} viewBox="0 0 900 520" className="w-full h-auto max-h-[40vh] md:max-h-[55vh]" preserveAspectRatio="xMidYMid meet">
+            <defs>
             <linearGradient id="beam-grad" gradientUnits="userSpaceOnUse" x1="0" y1="260" x2="450" y2="260">
               <stop offset="0%" stopColor="white" stopOpacity="0" />
               <stop offset="40%" stopColor="white" stopOpacity="0.6" />
@@ -517,17 +515,13 @@ export default function PrismHero() {
           {/* <a href="#" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border border-[var(--border)] text-[var(--text-secondary)] text-base hover:border-[var(--border-hover)] hover:text-[var(--text-primary)] transition-colors">Watch 60-sec demo</a> */}
         </div>
               
+        <p className="text-xs text-[var(--text-tertiary)] mt-2">iPhone & iPad · AUV3 · iOS 16+</p>
 
       </div>
 
       {/* HUD panel */}
       {activeModal !== null && <FeatureHUD activeModal={activeModal} setActiveModal={setActiveModal} />}
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-18 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-[var(--text-tertiary)]">
-        {/* <span className="text-lg animate-bounce">⌄</span> */}
-        <p className="mt-2 text-xs text-[var(--text-tertiary)]">iPhone & iPad · AUV3 · iOS 16+</p>  
-      </div>
     </section>
   );
 }

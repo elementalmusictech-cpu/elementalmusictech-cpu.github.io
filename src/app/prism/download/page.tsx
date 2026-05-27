@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Download Prism — MIDI Step Sequencer for iPhone & iPad",
+  description:
+    "Get Prism on the App Store. 16-track AUv3 MIDI step sequencer starting at $19.99 with optional Euclidean, LFO, Step FX, and Multi-Sequencer extensions.",
+};
+
 export default function DownloadPage() {
   const iaps = [
     { name: "Euclidean Sequencer", desc: "3-layer Euclidean generator per drum pad" },
@@ -11,9 +19,13 @@ export default function DownloadPage() {
       <section className="py-24 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">Get Prism.</h1>
-          <div className="border border-[var(--border)] rounded-xl bg-[var(--bg-secondary)] p-6 inline-block mb-6">
-            <p className="font-mono text-xs text-[var(--text-tertiary)]">[ App Store badge ]</p>
-          </div>
+          <a href="https://apps.apple.com/app/prism-sequencer/id6502302630" target="_blank" rel="noopener noreferrer" className="inline-block mb-6">
+            <img
+              src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1276560000"
+              alt="Download on the App Store"
+              style={{ height: 64 }}
+            />
+          </a>
           <div className="text-6xl font-bold mb-2">$19.99</div>
           <p className="text-lg text-[var(--text-secondary)] mb-10">Extend with in-app purchases.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-left mb-6">
@@ -30,7 +42,7 @@ export default function DownloadPage() {
               <p className="text-sm mt-1">Base + all IAPs</p>
             </div>
           </div>
-          <p className="text-sm text-[var(--text-tertiary)] max-w-lg mx-auto">Requires iPhone or iPad running iOS 16 or later. Prism is a MIDI-only instrument — pair with any AUv3 synth or external hardware.</p>
+          <p className="text-sm text-[var(--text-tertiary)] max-w-lg mx-auto">Requires iPhone or iPad running iOS 16 or later. Prism is a MIDI-only instrument, pair it with any external sound source.</p>
         </div>
       </section>
     </main>

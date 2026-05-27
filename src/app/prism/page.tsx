@@ -3,8 +3,13 @@ import PrismHero from "@/components/prism/PrismHero";
 import MeltDiagram from "@/components/prism/meltDiagram";
 import BlockDiagram from "@/components/prism/chordBlockDiagram";
 import ConnectionsDiagram from "@/components/prism/connectionsDiagram";
+import type { Metadata } from "next";
 
-
+export const metadata: Metadata = {
+  title: "Prism — MIDI Step Sequencer for iPhone & iPad",
+  description:
+    "16-track AUv3 MIDI step sequencer with Fuse Modes, Chord Blocks, Parameter Locks, Euclidean rhythms, and Retroactive Capture. Hardware soul, software reach.",
+};
 
 const FEATURES = [
   { title: "Retroactive Capture", desc: "Prism is always listening. Play freely, then retroactively capture up to 16 bars of what you just played — filtered by your live input, the sequencer's output, or the final post-FX result." },
@@ -29,8 +34,9 @@ const schemaMarkup = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Prism — MIDI Step Sequencer",
-  "applicationCategory": "MusicApplication",
-  "operatingSystem": "iOS 16",
+  "applicationCategory": "MultimediaApplication",
+  "applicationSubCategory": "Music Sequencer",
+  "operatingSystem": "iOS 16+",
   "description": "Prism is a 16-track AUv3 MIDI step sequencer for iPhone and iPad with Chord Blocks, Fuse Modes (Peek/Echo/Melt), Retroactive MIDI Capture, Euclidean rhythms, and parameter locks.",
   "url": "https://www.alchemyelectronica.com/prism",
   "downloadUrl": "https://apps.apple.com/us/app/prism-midi-sequencer/id6502302630",
@@ -53,8 +59,8 @@ const schemaMarkup = {
     "AUv3 MIDI plug-in — works in any compatible host",
     "480 PPQN resolution"
   ],
-  "author": { "@type": "Person", "name": "Tyler" },
-  "softwareVersion": "1.0"
+  "author": { "@type": "Organization", "name": "Alchemy Electronica", "url": "https://www.alchemyelectronica.com" },
+  "screenshot": "https://www.alchemyelectronica.com/images/prism_hero.jpg"
 };
 
 
@@ -102,8 +108,8 @@ export default function PrismHome() {
       </section>
 
       {/* ── Positioning Statement ── */}
-      <section className="flex flex-col items-center justify-center px-6 pb-12 md:pb-16">
-        <p className="text-lg md:text-xl text-[var(--text-secondary)] text-center max-w-3xl">Prism competes with $1,000 hardware sequencers, can be played anywhere with iPhone & iPad,  <span className="text-[var(--text-primary)] font-semibold">and has capabilities none of them do.</span></p>
+      <section className="flex flex-col items-center justify-center px-6 pb-12 pt-20 md:pb-16">
+        <p className="text-lg md:text-xl text-[var(--text-secondary)] text-center max-w-3xl">Prism rivals $1,000 hardware sequencers,  <span className="text-[var(--text-primary)] font-semibold">unlocks workflows found nowhere else</span>, and plays anywhere on iPhone & iPad.</p>
       </section>
 
       {/* ── Two Track Types ── */}
@@ -219,7 +225,7 @@ export default function PrismHome() {
             </div>
 
             {/* Diagram */}
-            <div className="rounded-xl overflow-hidden min-h-[320px] md:min-h-[480px] lg:min-h-[540px]">
+            <div className="rounded-xl overflow-hidden min-h-[320px] md:min-h-[480px] pt-16 lg:min-h-[540px]">
               <BlockDiagram />
             </div>
           </div>
@@ -295,9 +301,9 @@ export default function PrismHome() {
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-sm font-mono uppercase tracking-widest text-[var(--accent)] mb-4">Alchemy Electronica</p>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Your next sequencer<br />fits in your pocket.</h2>
-          <p className="text-lg text-[var(--text-secondary)] mb-8 md:mb-10 max-w-xl mx-auto">16 tracks. Fuse Modes. Chord Blocks. Parameter Locks. Everything you'd expect from a $2,000 sequencer — on iPhone and iPad.</p>
+          <p className="text-lg text-[var(--text-secondary)] mb-8 md:mb-10 max-w-xl mx-auto">16 tracks. Polyrhythms. Chord Blocks. Parameter locks. Everything you'd expect from a $1,000 sequencer... at 2% the cost.</p>
           <a href="/prism/download" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[var(--cta)] text-[var(--bg-primary)] font-semibold text-lg hover:bg-[var(--cta-hover)] transition-colors shadow-lg shadow-[var(--cta)]/20">Download on the App Store</a>
-          <p className="mt-6 text-sm text-[var(--text-secondary)]">At 2% the cost of a hardware sequencer.</p>
+          {/* <p className="mt-6 text-sm text-[var(--text-secondary)]">At 2% the cost of a hardware sequencer.</p> */}
           <p className="mt-2 text-xs text-[var(--text-tertiary)]">iPhone & iPad · AUV3 · iOS 16+</p>
         </div>
       </section>

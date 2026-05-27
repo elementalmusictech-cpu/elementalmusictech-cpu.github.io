@@ -2,9 +2,23 @@ import fs from "fs";
 import path from "path";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import type { Metadata } from "next";
+
 
 interface Props {
   params: Promise<{ section: string; slug: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { section, slug } = await params;
+  const filePath = path.join(process.cwd(), "src/content/docs", section, `${slug}.md`);
+  if (!fs.existsSync(filePath)) return {};
+  const raw = fs.readFileSync(filePath, "utf-8");
+  const titleMatch = raw.match(/^#\s+(.+)/m);
+  const title = titleMatch ? titleMatch[1] : slug.replace(/-/g, " ");
+  const descMatch = raw.match(/^#.+\n+(.+)/m);
+  const description = descMatch ? descMatch[1].slice(0, 160) : undefined;
+  return { title, description };
 }
 
 export async function generateStaticParams() {

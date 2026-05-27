@@ -6,7 +6,7 @@ export default function ConnectionsDiagram() {
       style={{
         background: "#0a0a0a",
         borderRadius: 16,
-        padding: "40px 24px 36px",
+        padding: "12px 8px 8px",
         fontFamily: "'Exo 2', sans-serif",
         color: "#e8e4dc",
         position: "relative",
@@ -39,7 +39,7 @@ export default function ConnectionsDiagram() {
 
       <svg
         width="100%"
-        viewBox="0 0 680 460"
+        viewBox="60 16 570 448"
         style={{ display: "block", position: "relative" }}
       >
         <defs>
