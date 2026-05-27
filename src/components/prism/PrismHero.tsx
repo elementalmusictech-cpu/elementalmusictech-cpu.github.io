@@ -218,7 +218,7 @@ export default function PrismHero() {
 
       const txt = document.createElementNS(ns, "text");
       txt.setAttribute("font-family", "monospace");
-      txt.setAttribute("font-size", "10");
+      txt.setAttribute("font-size", "13");
       txt.setAttribute("fill", textSecondary);
       txt.setAttribute("text-anchor", "start");
       const idSpan = document.createElementNS(ns, "tspan");
@@ -237,10 +237,10 @@ export default function PrismHero() {
 
     const glow = svg.querySelector("#center-glow")!;
 
-    const fanOriginX = 550, fanOriginY = 260;
-    const fanRadius = 220;
-    const arcStart = -50;
-    const arcEnd = 50;
+    const fanOriginX = 560, fanOriginY = 260;
+    const fanRadius = 230;
+    const arcStart = -60;
+    const arcEnd = 60;
     const featurePositions = FEATURES.map((_, i) => {
       const deg = arcStart + (arcEnd - arcStart) * (i / (FEATURES.length - 1));
       const rad = (deg * Math.PI) / 180;
@@ -270,8 +270,8 @@ export default function PrismHero() {
     const cy = bbox.y - padY + (bbox.height + padY * 2) / 2;
     rect.style.transformOrigin = `${cx}px ${cy}px`;
     txt.style.transformOrigin  = `${cx}px ${cy}px`;
-    rect.style.transform = "scale(1.3)";
-    txt.style.transform  = "scale(1.3)";
+    rect.style.transform = "scale(1.35)";
+    txt.style.transform  = "scale(1.35)";
 
     g.addEventListener("mouseenter", () => {
     const idx = featureLabels.findIndex(l => l.g === g);
@@ -289,8 +289,8 @@ export default function PrismHero() {
     });
     g.addEventListener("mouseleave", () => {
     hoveredRef.current = null;
-    rect.style.transform = "scale(1.3)";
-    txt.style.transform  = "scale(1.3)";
+    rect.style.transform = "scale(1.4)";
+    txt.style.transform  = "scale(1.4)";
     rect.setAttribute("stroke-opacity", "0.2");
     rect.setAttribute("stroke-width", "1");
     rect.removeAttribute("filter");
@@ -317,8 +317,8 @@ export default function PrismHero() {
     hit.addEventListener("mouseleave", () => {
     hoveredRef.current = null;
     const { rect, txt } = featureLabels[i];
-    rect.style.transform = "scale(1.3)";
-    txt.style.transform  = "scale(1.3)";
+    rect.style.transform = "scale(1.4)";
+    txt.style.transform  = "scale(1.4)";
     rect.setAttribute("stroke-opacity", "0.2");
     rect.setAttribute("stroke-width", "1");
     rect.removeAttribute("filter");
@@ -419,7 +419,7 @@ export default function PrismHero() {
 
       {/* Prism SVG */}
       <div className="relative w-full max-w-[900px] mb-2 md:mb-4">
-            <svg ref={svgRef} viewBox="0 0 900 520" className="w-full h-auto max-h-[40vh] md:max-h-[55vh]" preserveAspectRatio="xMidYMid meet">
+            <svg ref={svgRef} viewBox="0 0 900 520" className="w-full h-auto max-h-[55vh]" preserveAspectRatio="xMidYMid meet">
             <defs>
             <linearGradient id="beam-grad" gradientUnits="userSpaceOnUse" x1="0" y1="260" x2="450" y2="260">
               <stop offset="0%" stopColor="white" stopOpacity="0" />
