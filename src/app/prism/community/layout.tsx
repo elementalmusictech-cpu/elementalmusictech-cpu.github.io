@@ -6,3 +6,7 @@ export const metadata: Metadata = {
   description:
     "Join the Prism community. Tutorial series, Discord, YouTube walkthroughs, and Facebook group for the 16-track MIDI step sequencer.",
 };
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return children;
+}
