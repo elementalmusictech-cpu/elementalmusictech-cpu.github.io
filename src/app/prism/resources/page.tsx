@@ -12,8 +12,8 @@ const DOWNLOADS = [
     title: "Prism User Manual",
     desc: "The complete reference for every feature in Prism. 150 pages covering everything from first setup to advanced workflows.",
     meta: "PDF · ~40MB",
-    href: "https://github.com/YOUR_USERNAME/YOUR_REPO/releases/download/v1.0/Prism-Manual.pdf",
-    label: "Download Manual",
+    href: "https://drive.google.com/file/d/1iCtRFbw2gMiTsQ8mCDvqmHOvzukHqUBO/view",
+    label: "View Manual",
   },
   {
     title: "Ableton Live Remote Script",
@@ -53,7 +53,8 @@ export default function ResourcesPage() {
                 <div className="flex flex-col items-start sm:items-end gap-2 shrink-0">
                   <a
                     href={item.href}
-                    download
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="px-5 py-2.5 rounded-lg bg-[var(--cta)] text-[var(--bg-primary)] text-sm font-semibold hover:bg-[var(--cta-hover)] transition-colors whitespace-nowrap"
                   >
                     {item.label}
