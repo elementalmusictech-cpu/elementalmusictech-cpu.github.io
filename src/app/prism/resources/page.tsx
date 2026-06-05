@@ -19,7 +19,7 @@ const DOWNLOADS = [
     title: "Ableton Live Remote Script",
     desc: "The Python control script for Ableton Live integration. Enables bi-directional sync, automatic track mapping, and CC-to-Macro routing.",
     meta: "ZIP · Python script",
-    href: "https://github.com/YOUR_USERNAME/YOUR_REPO/releases/download/v1.0/Prism-Ableton-Script.zip",
+    href: "https://github.com/user-attachments/files/28638378/PrismScript.zip",
     label: "Download Script",
     note: "Installation guide in the manual — Chapter 9, or see the Docs page.",
   },
