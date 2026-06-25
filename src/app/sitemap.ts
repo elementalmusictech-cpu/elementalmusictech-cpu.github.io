@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/prism/docs/workflows/hardware-brain`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/prism/docs/workflows/blank-to-arrangement`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/prism/docs/guides/faq`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${base}/prism/resources`, lastModified: now, changeFrequency: "monthly", priority: 0.5 }
+    { url: `${base}/prism/resources`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
+    { url: base, lastModified: now, changeFrequency: "monthly", priority: 0.5 }
   ];
 }
