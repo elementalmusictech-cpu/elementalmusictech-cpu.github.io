@@ -1,0 +1,95 @@
+@font-face {
+  font-family: "Prism Website Exo 2";
+  src: url("/Exo2-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@media screen {
+  html.website-embedded {
+    --bg: #0a0a0a;
+    --panel: #111111;
+    --line: rgba(255, 255, 255, 0.08);
+    --accent: #c8a24d;
+    --heading: #e8e8e8;
+    scroll-padding-top: 22px;
+  }
+
+  .website-embedded .site-header { display: none; }
+  .website-embedded .site-grid { max-width: 1280px; padding: 0 24px; }
+  .website-embedded .site-sidebar { padding: 32px 24px 40px 0; }
+  .website-embedded main { padding: 32px 0 64px; }
+
+  .website-embedded .sidebar-title {
+    color: var(--accent);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .website-embedded .nav-section > p {
+    color: #9a9489;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .website-embedded .site-sidebar a[aria-current="location"] {
+    color: var(--accent);
+    background: rgba(200, 162, 77, 0.12);
+    border-radius: 6px;
+    padding-left: 8px;
+  }
+
+  .website-embedded .chapter h1,
+  .website-embedded .chapter h2,
+  .website-embedded .chapter h3 {
+    font-family: "Prism Website Exo 2", var(--font);
+    scroll-margin-top: 22px;
+  }
+
+  .website-embedded .chapter h1 {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    margin-bottom: 16px;
+  }
+
+  .website-embedded .chapter h2 { font-weight: 500; margin-top: 32px; }
+  .website-embedded .chapter h3 { font-weight: 500; }
+  .website-embedded .anchor { scroll-margin-top: 22px; }
+
+  .website-embedded .find-panel input {
+    width: min(100%, 420px);
+    padding: 10px 14px;
+    border-radius: 10px;
+  }
+
+  .website-embedded .search-results,
+  .website-embedded .photo-viewer { border-radius: 10px; }
+
+  .website-embedded a:hover { color: #d4b465; }
+  .website-embedded .nav-children { border-color: var(--line); }
+  .website-embedded ::selection { background: rgba(200, 162, 77, 0.12); color: #e0c674; }
+  .website-embedded ::-webkit-scrollbar { width: 6px; }
+  .website-embedded ::-webkit-scrollbar-track { background: transparent; }
+  .website-embedded ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 3px; }
+}
+
+@media screen and (min-width: 721px) {
+  .website-embedded .site-grid {
+    height: 100vh;
+    height: 100dvh;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: clamp(24px, 3vw, 48px);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .website-embedded .site-grid { padding: 0; }
+  .website-embedded .site-sidebar { top: 0; padding: 24px 20px 80px; background: var(--panel); }
+  .website-embedded main { padding: 24px 24px 80px; }
+  .website-embedded .chapter h1 { font-size: 2rem; }
+  .website-embedded .mobile-contents { border-radius: 10px; border-color: var(--line); background: var(--panel); }
+}

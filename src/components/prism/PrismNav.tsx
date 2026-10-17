@@ -10,13 +10,14 @@ const NAV_ITEMS = [
   { label: "Features", href: "/prism/features" },
   { label: "Compare", href: "/prism/compare" },
   // { label: "Community", href: "/prism/community" },
-  { label: "Manual", href: "/manual/" },
+  { label: "Manual", href: "/prism/manual" },
   { label: "Resources", href: "/prism/resources" },
   { label: "Blog", href: "/prism/blog" },
 ];
 
 export default function PrismNav() {
   const pathname = usePathname();
+  const manualOpen = pathname.startsWith("/prism/manual");
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -29,7 +30,7 @@ export default function PrismNav() {
   useEffect(() => { setMobileOpen(false); }, [pathname]);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-[var(--bg-primary)]/90 backdrop-blur-xl border-b border-[var(--border)]" : "bg-transparent"}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || manualOpen ? "bg-[var(--bg-primary)]/90 backdrop-blur-xl border-b border-[var(--border)]" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/prism" className="flex items-center gap-2.5 group">
         <Image src="/images/prismIcon.png" alt="Prism icon" width={40} height={40} className="group-hover:scale-110 transition-transform" />
@@ -37,12 +38,9 @@ export default function PrismNav() {
         </Link>
 
         <div className="hidden md:flex items-center gap-1">
-          {NAV_ITEMS.map((item) => {
-            const NavLink = item.href === "/manual/" ? "a" : Link;
-            return (
-              <NavLink key={item.href} href={item.href} className={`px-3.5 py-2 rounded-lg text-sm transition-colors ${pathname.startsWith(item.href) ? "text-[var(--accent)]" : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"}`}>{item.label}</NavLink>
-            );
-          })}
+          {NAV_ITEMS.map((item) => (
+            <Link key={item.href} href={item.href} className={`px-3.5 py-2 rounded-lg text-sm transition-colors ${pathname.startsWith(item.href) ? "text-[var(--accent)]" : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"}`}>{item.label}</Link>
+          ))}
         </div>
 
         <div className="flex items-center gap-3">
@@ -60,12 +58,9 @@ export default function PrismNav() {
       {mobileOpen && (
         <div className="md:hidden border-t border-[var(--border)] bg-[var(--bg-primary)]/95 backdrop-blur-xl">
           <div className="px-6 py-4 flex flex-col gap-1">
-            {NAV_ITEMS.map((item) => {
-              const NavLink = item.href === "/manual/" ? "a" : Link;
-              return (
-                <NavLink key={item.href} href={item.href} className={`px-4 py-3 rounded-lg text-sm ${pathname.startsWith(item.href) ? "text-[var(--accent)] bg-[var(--accent-dim)]" : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]"}`}>{item.label}</NavLink>
-              );
-            })}
+            {NAV_ITEMS.map((item) => (
+              <Link key={item.href} href={item.href} className={`px-4 py-3 rounded-lg text-sm ${pathname.startsWith(item.href) ? "text-[var(--accent)] bg-[var(--accent-dim)]" : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]"}`}>{item.label}</Link>
+            ))}
           </div>
         </div>
       )}
