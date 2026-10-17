@@ -24,10 +24,10 @@ const DOWNLOADS = [
     note: "Installation guide in the manual — Chapter 9, or see the Docs page.",
   },
   {
-    title: "Prism Ableton Installer — 0.1 Beta",
+    title: "Prism Ableton Installer — 0.2 Beta",
     desc: "Beta installer for Prism’s Ableton Live integration.",
     meta: "ZIP · 1.3 MB · Beta",
-    href: "/downloads/Prism-Ableton-Installer-0.1-BETA.zip",
+    href: "/downloads/Prism-Ableton-Installer-0.2.zip",
     label: "Download Beta Installer",
   },
 ];
