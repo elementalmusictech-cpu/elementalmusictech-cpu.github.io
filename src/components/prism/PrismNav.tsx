@@ -10,7 +10,7 @@ const NAV_ITEMS = [
   { label: "Features", href: "/prism/features" },
   { label: "Compare", href: "/prism/compare" },
   // { label: "Community", href: "/prism/community" },
-  { label: "Docs", href: "/prism/docs" },
+  { label: "Manual", href: "/manual/" },
   { label: "Resources", href: "/prism/resources" },
   { label: "Blog", href: "/prism/blog" },
 ];
@@ -37,9 +37,12 @@ export default function PrismNav() {
         </Link>
 
         <div className="hidden md:flex items-center gap-1">
-          {NAV_ITEMS.map((item) => (
-            <Link key={item.href} href={item.href} className={`px-3.5 py-2 rounded-lg text-sm transition-colors ${pathname.startsWith(item.href) ? "text-[var(--accent)]" : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"}`}>{item.label}</Link>
-          ))}
+          {NAV_ITEMS.map((item) => {
+            const NavLink = item.href === "/manual/" ? "a" : Link;
+            return (
+              <NavLink key={item.href} href={item.href} className={`px-3.5 py-2 rounded-lg text-sm transition-colors ${pathname.startsWith(item.href) ? "text-[var(--accent)]" : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"}`}>{item.label}</NavLink>
+            );
+          })}
         </div>
 
         <div className="flex items-center gap-3">
@@ -57,9 +60,12 @@ export default function PrismNav() {
       {mobileOpen && (
         <div className="md:hidden border-t border-[var(--border)] bg-[var(--bg-primary)]/95 backdrop-blur-xl">
           <div className="px-6 py-4 flex flex-col gap-1">
-            {NAV_ITEMS.map((item) => (
-              <Link key={item.href} href={item.href} className={`px-4 py-3 rounded-lg text-sm ${pathname.startsWith(item.href) ? "text-[var(--accent)] bg-[var(--accent-dim)]" : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]"}`}>{item.label}</Link>
-            ))}
+            {NAV_ITEMS.map((item) => {
+              const NavLink = item.href === "/manual/" ? "a" : Link;
+              return (
+                <NavLink key={item.href} href={item.href} className={`px-4 py-3 rounded-lg text-sm ${pathname.startsWith(item.href) ? "text-[var(--accent)] bg-[var(--accent-dim)]" : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]"}`}>{item.label}</NavLink>
+              );
+            })}
           </div>
         </div>
       )}
